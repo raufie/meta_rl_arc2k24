@@ -1,0 +1,31 @@
+GRID_KERNEL_SIZE : 3
+GRID_PROJ_KERNEL_SIZE : 3
+BBOX_KERNEL_SIZE : 3
+
+# ops
+OPERATION_EMB_DIM : 131
+N_OPS : 36
+NO_OP : 35 # 35th ix : 36th action
+
+# full state embedding
+# 2701+128+8-5
+EMB_DIM : 2832
+# please see the function get_adder in utils for how I got this number
+BLOCK_SIZE : 64
+
+# Decoder config
+N_HEADS : 8
+RESIDUAL_DROP : 0.2
+N_BLOCKS : 8
+# outs
+# output op_size (NO_OP not allowed)
+OP_SIZE : 34
+
+# DEVICE
+DEVICE : "cuda"
+
+
+#### ENVIRONMENT CONFIG
+REWARD_GRID_WEIGHT : 0.75
+REWARD_SUBMIT_WEIGHT : 0.15
+REWARD_DIM_WEIGHT : 0.05
